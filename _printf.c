@@ -14,7 +14,9 @@ int _printf(const char *format, ...)
 	char *next = malloc(sizeof(char));
 
 	va_start(args, format);
-	for (i = 0; i <= _strlen(format); i++)
+	if (format == NULL)
+		return (0);
+	for (i = 0; i < _strlen(format); i++)
 	{
 		if (format[i] == '%')
 		{
@@ -23,6 +25,11 @@ int _printf(const char *format, ...)
 			{
 				i++;
 				len = len + get_func(next)(args);
+			}
+			else
+			{
+				*ch = format[i];
+				write(1, ch, 1);
 			}
 		}
 		else
@@ -33,5 +40,9 @@ int _printf(const char *format, ...)
 	}
 	len = len + i;
 	va_end(args);
-	return (len - 1);
+	free(ch);
+	ch = NULL;
+	free(next);
+	next = NULL;
+	return (len);
 }
