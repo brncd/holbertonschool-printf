@@ -6,7 +6,7 @@
  * Return: The function associated or NULL if there isn't one.
  */
 
-int (*get_func(const char *s))(va_list args)
+int (*get_func(const char s))(va_list args)
 {
 	format_t specs[] = {
 		{'c', put_char},
@@ -20,7 +20,7 @@ int (*get_func(const char *s))(va_list args)
 
 	for (i = 0; i < 5; i++)
 	{
-		if (*s == specs[i].format_specs)
+		if (s == specs[i].format_specs)
 			return (specs[i].f);
 	}
 	return (NULL);

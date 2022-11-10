@@ -9,40 +9,37 @@
 int _printf(const char *format, ...)
 {
 	int i, len = 0;
-	char *ch = malloc(sizeof(char));
+	char c = 'A';
 	va_list args;
-	char *next = malloc(sizeof(char));
 
 	va_start(args, format);
 	if (format == NULL)
-		return (0);
+		return (-1);
 	for (i = 0; i < _strlen(format); i++)
 	{
 		if (format[i] == '%')
 		{
-			*next = format[i + 1];
-			if (get_func(next) != NULL)
+			c = format[i + 1];
+			if (c == '\0')
+				return (-1);
+			if (get_func(c) != NULL)
 			{
 				i++;
-				len = len + get_func(next)(args);
+				len = len + get_func(c)(args);
 			}
 			else
-			{
-				*ch = format[i];
-				write(1, ch, 1);
+			{	
+				c = format[i];
+				write(1, &c, 1);
 			}
 		}
 		else
 		{
-			*ch = format[i];
-			write(1, ch, 1);
+			c = format[i];
+			write(1, &c, 1);
 		}
 	}
 	len = len + i;
 	va_end(args);
-	free(ch);
-	ch = NULL;
-	free(next);
-	next = NULL;
 	return (len);
 }

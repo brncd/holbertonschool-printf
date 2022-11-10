@@ -6,17 +6,16 @@
  * @i: Length counter.
  * Return: The length of the integer.
  */
-int int_wc(int n, int i)
+int int_wc(long int n, int i)
 {
 	unsigned int d;
-	char c, *s;
+	char c;
 
 	if (n < 0)
 	{
 		c = '-';
-		s = &c;
 		n = -n;
-		write(1, s, 1);
+		write(1, &c, 1);
 		i = 1;
 	}
 
@@ -24,9 +23,8 @@ int int_wc(int n, int i)
 	{
 		d = n % 10;
 		c = d + '0';
-		s = &c;
 		i = int_wc(n / 10, i + 1);
-		write(1, s, 1);
+		write(1, &c, 1);
 		return (i);
 	}
 	else
@@ -34,8 +32,7 @@ int int_wc(int n, int i)
 		if (i == 0)
 		{
 			c = n + '0';
-			s = &c;
-			write(1, s, 1);
+			write(1, &c, 1);
 			i++;
 		}
 	}

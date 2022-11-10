@@ -24,9 +24,8 @@ int _strlen(const char *_str)
 int put_char(va_list args)
 {
 	char c = va_arg(args, int);
-	char *p = &c;
 
-	write(1, p, 1);
+	write(1, &c, 1);
 	return (-1);
 }
 
@@ -39,10 +38,12 @@ int put_char(va_list args)
 int put_string(va_list args)
 {
 	char *s = va_arg(args, char *);
-	int i = _strlen(s);
-
-	write(1, s, i);
-	return (i - 2);
+	
+	if (s == NULL)
+		s = "(null)";
+	
+	write(1, s, _strlen(s));
+	return (_strlen(s) - 2);
 }
 
 /**
@@ -54,9 +55,8 @@ int put_string(va_list args)
 int put_mod(__attribute__((unused)) va_list args)
 {
 	char c = '%';
-	char *p = &c;
 
-	write(1, p, 1);
+	write(1, &c, 1);
 	return (-1);
 }
 
