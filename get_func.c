@@ -14,14 +14,14 @@ int (*get_func(const char s))(va_list args)
 		{'%', put_mod},
 		{'d', put_int},
 		{'i', put_int}
-		};
+		}; /* See main.h */
 
 	int i;
 
 	for (i = 0; i < 5; i++)
 	{
-		if (s == specs[i].format_specs)
-			return (specs[i].f);
+		if (s == specs[i].format_specs) /* Check if the given specifier is valid */
+			return (specs[i].f); /* Return the associated function */
 	}
-	return (NULL);
+	return (NULL); /* If it's not a valid specifier, returns NULL */
 }

@@ -14,8 +14,8 @@
 
 typedef struct format
 {
-	char format_specs;
-	int (*f)(va_list args);
+	char format_specs; /* Valid format specifier */
+	int (*f)(va_list args); /* Function associated with that specifier */
 } format_t;
 
 int _printf(const char *format, ...);
