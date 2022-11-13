@@ -18,7 +18,6 @@ int int_wc(long int n, int i) /* First call should have 0 as second argument */
 		write(1, &c, 1);
 		i = 1;
 	}
-
 	if (n != 0)
 	{
 		d = n % 10; /* Last digit of n */

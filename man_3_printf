@@ -6,9 +6,9 @@ _printf \- format and print data
 \fI\,FORMAT \/\fR[\fI\,ARGUMENT\/\fR]...
 .br
 .SH DESCRIPTION
-.\" Add any additional description here
+.\ _printf receives a format and produces an output to the standard output stream according to the received format.
 .PP
-Print ARGUMENT(s) according to FORMAT
+Returns the number of characters printed.
 .SH AUTHORS
 Written by brncd and repli1.
 .SH "REPORTING BUGS"
@@ -21,4 +21,4 @@ License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 .SH "SEE ALSO"
-Source code: <https://www.github.com/>
+Source code: <https://github.com/brncd/holbertonschool-printf/>

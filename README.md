@@ -3,7 +3,8 @@
 
 ### Description:
 **`_printf`** receives a `format` and produces an output to the standard output stream according to the received `format`, and returns the number of characters printed.
-**`_printf`** can receive multiple arguments, and will replace them according to their format.
+**`_printf`** can receive multiple `arguments`, and will replace them according to their `format`.
+
 **Supported formats:**
  - Character: `%c`
  - Integer: `%d` and `%i`
@@ -11,12 +12,13 @@
  - Modulo: `%%`
 
 ---
+
 ### Flowchart:
-![](https://i.imgur.com/j7MAMyE.png)
+<img src="https://i.imgur.com/j7MAMyE.png" data-align="center" width="500">
+
 ---
 
 ### Requirements:
-
  - C compiler.
 
 ### Compilation:
@@ -30,7 +32,7 @@ Code:
 #include "main.h"
 int main(void)
 {	
-	return(_printf("Hello  %s\n", "World");
+	return(_printf("Hello %s\n", "World"));
 }
 ```
 Compilation:
@@ -46,7 +48,7 @@ $ echo $?
 $
 ```	 	
 ### Testing:
-```bash
+```
 $ cat main.c 
 #include <limits.h>
 #include <stdio.h>
@@ -80,7 +82,6 @@ $
 ---
 
 ### Authors:
-[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="15"/>](https://github.com/repli1) [Repli1](https://github.com/repli1)
-[<img src="https://s18955.pcdn.co/wp-content/uploads/2018/02/github.png" width="15"/>](https://github.com/brncd) [brncd](https://github.com/brncd)
+[<img src="https://i.imgur.com/tOqS5vt.png" width="15"/>](https://github.com/repli1) [Repli1](https://github.com/repli1)
 
----
+[<img src="https://i.imgur.com/tOqS5vt.png" width="15"/>](https://github.com/brncd) [brncd](https://github.com/brncd)

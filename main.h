@@ -1,5 +1,5 @@
-#ifndef main_h
-#define main_h
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -28,4 +28,5 @@ int (*get_func(const char s))(va_list args);
 char *int_to_str(int n);
 char int_to_char(int n);
 int int_wc(long int n, int i);
+
 #endif
